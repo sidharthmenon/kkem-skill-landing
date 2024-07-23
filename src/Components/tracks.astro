@@ -1,0 +1,205 @@
+<section id="tracks" class="px-5 py-24">
+  <div class="container mx-auto">
+
+    <div class="flex items-center justify-center gap-5 mb-5">
+      <div data-tab="track1" class="px-5 py-2 bg-dark text-white shadow-md cursor-pointer">
+        Career Track
+      </div>
+      <div data-tab="track2" class="px-5 py-2 border border-dark shadow-md cursor-pointer">
+        Learning Track
+      </div>
+    </div>
+
+    <div data-tab-content="track1" class="flex flex-wrap gap-5">
+      <div class="w-full md:w-1/4 gap-2 flex flex-col">
+        <div data-accordion="career" class="px-5 py-2 bg-dark text-white  shadow-md cursor-pointer">
+          Job Audition
+        </div>
+        <div data-accordion="curation" class="px-5 py-2 border border-dark shadow-md cursor-pointer">
+          Job First
+        </div>
+        <div data-accordion="recruit" class="px-5 py-2 border border-dark shadow-md cursor-pointer">
+          Internships
+        </div>
+      </div>
+      <div class="md:w-2/3">
+        <div data-accordion-content="career" class="shadow-md p-5  border border-dark">
+          <div class="text-xl font-bold mb-3 text-center">Job Audition</div>
+          <div class="mb-3">
+           
+            <div>In this category, candidates will be placed in jobs based on their
+              specific skill sets. To identify and match job seekers with relevant positions, skill
+              challenges, hackathons, code reviews, product pitching, and technical writing,
+              allowing candidates to showcase their skills and potential. This approach ensures
+              that candidates are hired based on their actual capabilities, fostering a stronger
+              employer-employee fit.</div>
+          </div>
+        </div>
+
+        <div data-accordion-content="curation" class="shadow-md p-5  border border-dark hidden">
+          <div class="text-xl font-bold mb-3 text-center">Job First</div>
+          <div class="mb-3">
+            This model involves a more comprehensive process. Candidates will
+undergo screening by industry experts to assess their potential. Once selected,
+they will receive specialized training to enhance their skills and prepare them for
+specific job roles. After completing the training, these individuals will be deployed
+directly into suitable positions if they satisfy the minimum skillset, ensuring that
+they are well-equipped for the demands of the job market.
+          </div>
+        </div>
+
+        <div data-accordion-content="recruit" class="shadow-md p-5  border border-dark hidden">
+          <div class="text-xl font-bold mb-3 text-center">Internships</div>
+         
+          <div class="mb-3">
+            Internships are a valuable component of the initiative, allowing
+students and recent graduates to gain practical experience and exposure to real-
+world work environments. Internships serve as a stepping stone to full-time
+employment, helping candidates to develop their skills and professional network.
+          </div>
+          
+        </div>
+
+      </div>
+    </div>
+
+    <div data-tab-content="track2" class="flex flex-wrap gap-5 hidden">
+      <div class="w-full md:w-1/4 gap-2 flex flex-col">
+        <div data-accordion="short" class="px-5 py-2 bg-dark text-white  shadow-md">
+          Short Term
+        </div>
+        <div data-accordion="long" class="px-5 py-2 border border-dark shadow-md">
+          Long Term
+        </div>
+      </div>
+      <div class="md:w-2/3">
+        <div data-accordion-content="short" class="shadow-md p-5  border border-dark">
+          <div class="text-xl font-bold mb-3 text-center">Short Term</div>
+          <div class="mb-3">
+            <div>Short Term Learning Tracks are meant for students who are not meeting the Industry
+              requirements at first or choose themselves to develop their skills sets through training
+              programmes offered by various skills training providers.</div>
+          </div>
+          <div class="mb-3">
+            <div class="font-bold">Skills Exploration Workshops</div>
+            <div class="mb-3">KKEM shall conduct Skill Exploration workshop in Campuses. These workshops are
+              intended to provide information related to job prospects of various skills programmes offered
+              by various skills partners of KKEM and enrol for these programmes with scholarship support.
+            </div>
+          </div>
+          
+        </div>
+
+        <div data-accordion-content="long" class="shadow-md p-5  border border-dark hidden">
+          <div class="text-xl font-bold mb-3 text-center">Long Term</div>
+          <div class="mb-3">
+            This segment of learning track supports students who wish to develop their skills in an
+            interested area of their choice using peer to peer leaning methods. This segments contains
+            following interventions detailed below
+          </div>
+          <div class="mb-3">
+            <div class="font-bold">Learning Station</div>
+            <div>Learning Stations are nothing but a peer to peer mechanism to introduce various Technology
+              domains to students in a structured manner. KKEM shall support Institutions to setup
+              learning stations. This would be setup in partnership with Community Partners such as
+              GTECH Mulearn etc.</div>
+          </div>
+          <div class="mb-3">
+            <div class="font-bold">Interest Group Formation</div>
+            <div class="mb-3">Students who are interested in a particular technology or domain can join together and form
+              an interest group as an immediate output of learning station activity.
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="font-bold">Learning Circle</div>
+            <div>Learning Circles are a peer to peer voluntary learning group of students in a particular
+              technology or domain. Students can initiate formation of learning circle in their interested
+              domain along with the interested fellow students. A campus can host any number of learning
+              circles. These voluntary groups will meet on a fixed date at a fixed venue and discuss and
+              learn new things in that particular domain. These Learning Circles will be supported with
+              specific domain training and will connect with relevant Industry mentors through a structured
+              format.</div>
+          </div>
+          <div class="">
+            <div class="font-bold">Skill bootcamps</div>
+            <div>Based on Industry feedbacks, customised bootcamps would be organised with the support of
+              Industry partners. KKEM shall support Institutions to design such bootcamps and will extend
+              support to host in the campus itself.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+
+    var accordion_headings = [].slice.call(document.querySelectorAll('[data-accordion]'));
+    var accordion_contents = [].slice.call(document.querySelectorAll('[data-accordion-content]'));
+
+    function TabAccordion(e){
+      var target_el = e.target.closest('[data-accordion]');
+      var target = target_el.getAttribute('data-accordion');
+
+      if(target){
+
+        accordion_headings.map(heading => {
+          heading.classList.remove('bg-dark', 'text-white');
+          heading.classList.add('border', 'border-dark');
+        })
+        accordion_contents.map(content => content.classList.add('hidden'));
+        
+        target_el.classList.add('bg-dark', 'text-white');
+        document.querySelector('[data-accordion-content="'+target+'"]').classList.remove('hidden');
+
+      }
+
+    }
+
+    accordion_headings.map(item => item.addEventListener('click', TabAccordion) );
+
+    var tab_headings = [].slice.call(document.querySelectorAll('[data-tab]'));
+    var tab_contents = [].slice.call(document.querySelectorAll('[data-tab-content]'));
+
+    function TabFn(e){
+      var target_el = e.target.closest('[data-tab]');
+      var target = target_el.getAttribute('data-tab');
+
+      if(target){
+
+        tab_headings.map(heading => {
+          heading.classList.remove('bg-dark', 'text-white');
+          heading.classList.add('border', 'border-dark');
+        })
+        tab_contents.map(content => content.classList.add('hidden'));
+        
+        target_el.classList.add('bg-dark', 'text-white');
+        var target_tab = document.querySelector('[data-tab-content="'+target+'"]');
+        target_tab.classList.remove('hidden');
+
+        var target_accordion = target_tab.querySelector('[data-accordion]')
+        
+        if(target_accordion){
+
+          accordion_headings.map(heading => {
+            heading.classList.remove('bg-dark', 'text-white');
+            heading.classList.add('border', 'border-dark');
+          })
+          accordion_contents.map(content => content.classList.add('hidden'));
+
+          var accordion = target_accordion.getAttribute('data-accordion');
+          
+          target_accordion.classList.add('bg-dark', 'text-white');
+          document.querySelector('[data-accordion-content="'+accordion+'"]').classList.remove('hidden');
+
+        }
+
+      }
+
+    }
+
+    tab_headings.map(item => item.addEventListener('click', TabFn) );
+
+  </script>
+</section>

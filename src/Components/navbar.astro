@@ -1,0 +1,19 @@
+<div class="flex items-center md:flex-row flex-col justify-between container mx-auto sticky ">
+  <img src="/img/kkem_logo.jpg" alt="" class="h-24 w-auto">
+
+  <div data-nav class="flex flex-wrap items-center gap-3">
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#tracks">Programme Tracks</a>
+  </div>
+
+</div>
+
+<script is:inline>
+	var scroll = new SmoothScroll('[data-nav] a', {
+    speed: 500,
+	  speedAsDuration: true,
+    easing: 'easeInOutCubic',
+  });
+</script>
